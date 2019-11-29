@@ -28,11 +28,12 @@ benefício ou limitação em termos de nota:
 ## Funcionamento da aplicação
 
 A aplicação deve permitir fazer pesquisas a **títulos**, e possivelmente
-**pessoas**, caso implementem a fase 4 da aplicação. Considera-se um **título**
+**pessoas**, caso implementem a fase 4 do projeto. Considera-se um **título**
 qualquer filme, série, episódio de uma série, vídeo, programa de televisão, e
 por ai fora. Uma **pessoa** é alguém que está de alguma forma relacionada com
 um título (por exemplo, um ator).
 
+O
 ### Fase 1: pesquisa de títulos básica
 
 _Em construção_
@@ -101,13 +102,19 @@ cabeçalho dos dados (por outras palavras, o nome de cada coluna).
 A descrição sobre o conteúdo de cada um destes ficheiros, bem como a forma como
 eles se relacionam, está descrita na [respetiva página do IMDB][IMDBData].
 Para desenvolver o projeto com sucesso é essencial que esta documentação, bem
-como os ficheiros em si, sejam estudados com bastante cuidado. Podem
-descomprimir os ficheiros apenas para os analisar. Uma forma rápida de ver os
-conteúdos dos ficheiros descomprimidos consiste em usar o comando `less` na
-consola. A maior parte dos editores vai _crashar_ ao abrir estes ficheiros,
-devido ao seu tamanho. Escolham um editor capaz de o fazer, como por exemplo o
-Visual Studio Code com a extensão [Rainbow CSV] (que também suporta o formato
-[TSV]).
+como os ficheiros em si, sejam estudados com bastante cuidado. Uma forma rápida
+de ver os conteúdos dos ficheiros comprimidos consiste em usar o seguinte
+comando:
+
+`gzip -c -d title.episode.tsv.gz | less`
+
+Este comando funciona na consola Git Bash em Windows e no terminal em Linux
+(não funciona no CMD ou PowerShell). Devem substituir o nome do ficheiro pelo
+ficheiro que pretendem analisar, bem como estar na mesma pasta onde estão os
+ficheiros, fazendo os `cd` necessários para tal. Se descomprimirem os ficheiros
+e os tentarem abrir num editor, é provável que o editor _crashe_ devido ao seu
+tamanho. Escolham um editor capaz de o fazer, como por exemplo o Visual Studio
+Code com a extensão [Rainbow CSV] (que também suporta o formato [TSV]).
 
 ### Como abrir os ficheiros na aplicação a desenvolver
 
