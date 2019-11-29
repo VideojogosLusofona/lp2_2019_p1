@@ -10,6 +10,8 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # 1º Projeto de Linguagens de Programação II 2019/2020
 
+_**Atenção:** enunciado em construção!_
+
 ## Introdução
 
 Os grupos devem implementar uma aplicação em C# que realize pesquisas na base
@@ -25,30 +27,47 @@ benefício ou limitação em termos de nota:
 
 ## Funcionamento da aplicação
 
-### Pesquisa de títulos
+A aplicação deve permitir fazer pesquisas a **títulos**, e possivelmente
+**pessoas**, caso implementem a fase 4 da aplicação. Considera-se um **título**
+qualquer filme, série, episódio de uma série, vídeo, programa de televisão, e
+por ai fora. Uma **pessoa** é alguém que está de alguma forma relacionada com
+um título (por exemplo, um ator).
 
-Considera-se um **Título** qualquer filme, série, episódio de uma série, vídeo,
-programa de televisão, e por ai fora.
+### Fase 1: pesquisa de títulos básica
 
 _Em construção_
-
-<!-- #### Fase 1: até 12 valores -->
 
 <!-- Critério de ordenação -->
 
-### Pesquisa de pessoas
+A implementação desta fase é o requisito mínimo para o projeto ser avaliado,
+permitindo uma nota até 1.8 valores (em 3 possíveis).
 
-Uma **Pessoa** é alguém que está de alguma forma relacionada com um título.
+### Fase 2: pesquisa de títulos com classificação
 
 _Em construção_
 
+A implementação desta fase permite uma nota até 2.2 valores (em 3 possíveis).
+
+### Fase 3: integração de episódios em séries
+
+_Em construção_
+
+A implementação desta fase permite uma nota até 2.6 valores (em 3 possíveis).
+
+### Fase 4: pesquisa de pessoas
+
+_Em construção_
+
+A implementação desta fase permite a nota máxima de 3 valores.
+
 ### Apresentação de resultados
 
-Se o projeto for desenvolvido em consola, podem ser apresentados 10 ou 20 itens
-de cada vez, sendo necessário que o utilizador pressione uma tecla para ver os próximos 10/20 itens. Por outro lado, se se tratar de um projeto Unity, a lista
+Se o projeto for desenvolvido em consola, podem ser apresentados 20 ou 30 itens
+de cada vez, sendo necessário que o utilizador pressione uma tecla para ver os
+próximos 20/30 itens. Por outro lado, se se tratar de um projeto Unity, a lista
 de jogos deve ser *scrollable* ("rolável") para cima e para baixo. Também é
 possível ter uma lista "rolável" em modo consola, como implementado na solução
-do 2º projeto de LP1 2018/19.
+do [2º projeto de LP1 2018/19].
 
 Em qualquer dos casos devem ser apresentados, para cada item, todos os campos
 que podem ser usados como critério de ordenação.
@@ -131,9 +150,10 @@ aplicação deve terminar com uma mensagem de erro apropriada.
 Os ficheiros de dados são bastante grandes, no entanto a aplicação a ser
 desenvolvida não pode utilizar mais do que 6 gigabytes de memória, sendo
 bonificados projetos que necessitem de menos memória. Existem várias técnicas
-que podem e devem utilizar para manter utilização de memória sob controlo:
+que podem e devem ser utilizadas para manter utilização de memória sob
+controlo, nomeadamente:
 
-* Dependendo da vossa implementação, poderão precisar de apenas um ou dois
+* Dependendo da fase que atingirem, poderão precisar de apenas um ou dois
   ficheiros. Não abram/leiam ficheiros cuja informação não vão usar.
 * Muitos dos campos existentes em cada linha também não são necessários,
   devendo ser ignorados de modo a poupar memória.
@@ -176,6 +196,9 @@ orientada a objetos, como é o caso, entre outros, dos princípios [SOLID].
 Estes princípios devem ser balanceados com o princípio [KISS], crucial no
 desenvolvimento de qualquer aplicação.
 
+É de realçar que o uso de LINQ, Lambdas e *nullables* é essencial neste
+projeto.
+
 <a name="objetivos"></a>
 
 ## Objetivos e critério de avaliação
@@ -193,16 +216,18 @@ Este projeto tem os seguintes objetivos:
   * Projeto compila e executa sem erros e/ou *warnings*.
 * **O3** - Projeto adequadamente documentado. Documentação deve ser feita com
   [comentários de documentação XML][XML], e a documentação (gerada em formato
-  HTML ou CHM com [Doxygen][], [Sandcastle][] ou ferramenta similar) deve estar incluída no ZIP do projeto, mas **não** integrada no repositório Git.
+  HTML ou CHM com [Doxygen], [Sandcastle] ou ferramenta similar) deve estar
+  incluída no ZIP do projeto, mas **não** integrada no repositório Git.
 * **O4** - Repositório Git deve refletir boa utilização do mesmo, com
   *commits* de todos os elementos do grupo e mensagens de *commit* que sigam
   as melhores práticas para o efeito (como indicado
   [aqui](https://chris.beams.io/posts/git-commit/),
   [aqui](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53),
   [aqui](https://github.com/erlang/otp/wiki/writing-good-commit-messages) e
-  [aqui](https://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting)). Quaisquer *assets* binários, tais como imagens, devem ser integrados
+  [aqui](https://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting)).
+  Quaisquer *assets* binários, tais como imagens, devem ser integrados
   no repositório em modo Git LFS.
-* **O5** - Relatório em formato [Markdown][] (ficheiro `README.md`),
+* **O5** - Relatório em formato [Markdown] (ficheiro `README.md`),
   organizado da seguinte forma:
   * Título do projeto.
   * Autoria:
@@ -302,7 +327,7 @@ Estruturas de Dados][aed] do [Instituto Superior Técnico][ist]*
 
 ## Licenças
 
-Este enunciado é disponibilizados através da licença [CC BY-NC-SA 4.0].
+Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
 
 ## Metadados
 
@@ -333,3 +358,4 @@ Este enunciado é disponibilizados através da licença [CC BY-NC-SA 4.0].
 [GZipStream]:https://docs.microsoft.com/dotnet/api/system.io.compression.gzipstream
 [StreamReader]:https://docs.microsoft.com/dotnet/api/system.io.streamreader
 [ListSizeCtor]:https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.-ctor#System_Collections_Generic_List_1__ctor_System_Int32_
+[2º projeto de LP1 2018/19]:https://github.com/VideojogosLusofona/lp1_2018_p2_solucao
