@@ -322,6 +322,7 @@ Este enunciado é disponibilizados através da licença [CC BY-NC-SA 4.0].
 [SOLID]:https://en.wikipedia.org/wiki/SOLID
 [KISS]:https://en.wikipedia.org/wiki/KISS_principle
 [TSV]:https://en.wikipedia.org/wiki/Tab-separated_values
+[XML]:https://docs.microsoft.com/dotnet/csharp/codedoc
 [`Process`]:https://docs.microsoft.com/dotnet/api/system.diagnostics.process
 [IMDB]:https://www.imdb.com/
 [IMDBData]:https://www.imdb.com/interfaces/
