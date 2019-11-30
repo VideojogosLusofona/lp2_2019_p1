@@ -10,8 +10,6 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # 1º Projeto de Linguagens de Programação II 2019/2020
 
-_**Atenção:** enunciado em construção!_
-
 ## Introdução
 
 Os grupos devem implementar uma aplicação em C# que realize pesquisas na base
@@ -35,9 +33,9 @@ discussão do projeto incidirá essencialmente na forma como construíram as
 
 A aplicação deve permitir fazer pesquisas a **títulos**, e possivelmente
 **pessoas**, caso implementem a [Fase 4] do projeto. Considera-se um **título**
-qualquer filme, série, episódio de uma série, vídeo, programa de televisão, e
-por ai fora. Uma **pessoa** é alguém que está de alguma forma relacionada com
-um título (por exemplo, um ator).
+uma obra cinematográfica, seja um filme, série, episódio de uma série, vídeo,
+programa de televisão, e por ai fora. Uma **pessoa** é alguém que está de
+alguma forma relacionada com um título (por exemplo, um ator).
 
 O seguinte fluxograma apresenta uma ideia geral do funcionamento da aplicação,
 com os requisitos mínimos para as diferentes fases:
@@ -73,6 +71,11 @@ se chega a esta tela, como referido adiante.
 
 ## Fases de desenvolvimento
 
+O projeto deve ser desenvolvido por fases. Uma fase só é considerada concluída
+quando todas as fases anteriores também forem concluídas. Por exemplo, a
+pesquisa de pessoas ([Fase 4]) não será avaliada se não existir ligação entre
+títulos pai e filho ([Fase 3]).
+
 ### Fase 1: pesquisa de títulos básica
 
 Nesta fase deve ser possível realizar pesquisas de títulos, bem como ordenar os
@@ -85,6 +88,7 @@ resultados das pesquisas, usando os seguintes campos:
   ano em que a mesma começou.
 * **Ano de fim**: no caso de uma série, o ano em que a mesma terminou.
 * **Géneros**: até três géneros associados ao título (e.g. comédia, ação, etc).
+  Este campo pode não ser usado como critério de ordenação.
 
 No caso do **tipo** e dos **géneros**, serão valorizadas soluções que permitam
 ao utilizador escolher apenas entre os tipos e/ou géneros existentes na base de
@@ -107,21 +111,54 @@ Além dos requisitos das fases anteriores, os títulos pai devem ser
 explicitamente relacionados com os títulos filho. É o caso das séries e dos
 seus episódios.
 
-Em termos práticos, isto significa que, quando o utilizador chega à tela de
-informação detalhada sobre qualquer título, tem duas opções adicionais:
+Em termos práticos, na tela de informação de um título filho, deve aparecer
+também a seguinte informação:
 
-1. Fazer uma pesquisa automática pelos respetivos títulos filho, caso existam.
-   Na lista "rolável" que aparece com os resultados desta procura, o utilizador
-   poderá naturalmente clicar/selecionar um destes títulos filho, aparecendo
-   então uma tela de informação sobre o título filho selecionado.
-2. Ver a tela de informação do título pai, caso exista (isto é, caso o título
-   atual seja filho).
+* **Título do título pai** (e.g., nome da série)
+* **Temporada**
+* **Número do episódio**
+
+Adicionalmente, o utilizador deve ter a opção de ver diretamente a tela de
+informação do título pai.
+
+Na tela de informação de um título pai, deve existir a opção adicional de
+fazer uma pesquisa automática pelos respetivos títulos filho. Na lista
+"rolável" que aparecerá depois com os resultados desta procura, o utilizador
+poderá naturalmente clicar/selecionar um destes títulos filho, aparecendo então
+uma tela de informação sobre o título filho selecionado (que por sua vez tem a
+opção de ver a diretamente a tela de informação do título pai, e por ai fora).
 
 A implementação desta fase permite uma nota até 2.6 valores (em 3 possíveis).
 
 ### Fase 4: pesquisa de pessoas
 
-_Em construção_
+Além dos requisitos das fases anteriores, deve também ser implementada uma
+pesquisa de pessoas, bem como o estabelecimento de uma relação entre títulos e
+pessoas.
+
+A pesquisa de pessoas deve ser realizada usando os seguintes campos, que também
+servem como critério de ordenação (exceto com indicação em contrário):
+
+* **Nome**
+* **Ano de nascimento**
+* **Ano de falecimento**
+* **Profissões principais**, não necessárias como critério de ordenação.
+
+No caso das **profissões principais**, serão valorizadas soluções que permitam
+ao utilizador escolher apenas entre as profissões existentes na base de dados.
+
+O utilizador poderá selecionar uma pessoa da lista de resultados, aparecendo
+uma tela de informação com os respetivos detalhes da pessoa. Nesta tela, o
+utilizador tem uma opção adicional, que consiste em pedir uma pesquisa
+automática sobre os títulos em que a pessoa participou. Na apresentação de
+resultados, além do título principal e do ano de lançamento, deve aparecer para
+cada título qual foi a profissão/papel desempenhado pela pessoa em questão.
+Como acontece com qualquer listagem de títulos, o utilizador deve ter a
+possibilidade de selecionar um destes títulos para ver a sua informação
+detalhada, e por ai fora.
+
+Atenção que o campo de dados *knownForTitles* não contém todos os títulos em
+que uma pessoa participou, devendo ser ignorado neste projeto.
 
 A implementação desta fase permite a nota máxima de 3 valores.
 
