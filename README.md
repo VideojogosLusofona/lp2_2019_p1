@@ -46,21 +46,30 @@ com os requisitos mínimos para as diferentes fases:
 
 A aplicação final não tem de seguir exatamente estes passos, desde que siga a
 ideia geral. Por exemplo, podem optar por permitir terminar a aplicação em
-qualquer altura, e/ou, caso não cheguem à [Fase 4], podem simplesmente ignorar o
-menu "Tipo de Pesquisa", uma vez que só vão pesquisar por títulos.
+qualquer altura, e/ou, caso não cheguem à [Fase 4], podem simplesmente ignorar
+o menu "Tipo de Pesquisa", uma vez que só vão pesquisar por títulos.
 
 A aplicação deve mostrar ao utilizador um menu de pesquisa de títulos, e caso
 implementem a [Fase 4], um menu de pesquisa de pessoas. Em qualquer dos casos,
-deve ser possível ao utilizador usar como critérios de pesquisa um ou mais dos
-campos indicados em cada uma das [fases de desenvolvimento]. Deve também ser
-possível usar qualquer um destes campos como critério de ordenação.
+deve ser possível usar como critérios de pesquisa os campos indicados em cada
+uma das [fases de desenvolvimento]. Deve também ser possível usar qualquer um
+destes campos como critério de ordenação.
 
+Os resultados devem aparecer na forma de uma lista, mostrando para cada item
+dois ou três campos que consideram importantes. Por exemplo, no caso dos
+títulos deve aparecer o seu tipo, o título principal e o ano de lançamento.
 Se o projeto for desenvolvido em consola, podem ser apresentados 20 ou 30 itens
 de cada vez, sendo necessário que o utilizador pressione uma tecla para ver os
 próximos 20/30 itens. Por outro lado, se se tratar de um projeto Unity, a lista
 de jogos deve ser *scrollable* ("rolável") para cima e para baixo. Também é
 possível ter uma lista "rolável" em modo consola, como implementado na solução
 do [2º projeto de LP1 2018/19].
+
+Deve ser possível clicar ou selecionar um dos resultados da lista, caso no qual
+aparecerá uma nova tela/janela mostrando os detalhes do item em questão. Estes
+detalhes sao exatamente aqueles pelos quais é possível pesquisar. Nas fases
+[3][Fase 3] e [4][Fase 4] existem possibilidades adicionais de interação quando
+se chega a esta tela, como referido adiante.
 
 ## Fases de desenvolvimento
 
@@ -94,7 +103,19 @@ A implementação desta fase permite uma nota até 2.2 valores (em 3 possíveis)
 
 ### Fase 3: ligação entre séries e os respetivos episódios
 
-_Em construção_
+Além dos requisitos das fases anteriores, os títulos pai devem ser
+explicitamente relacionados com os títulos filho. É o caso das séries e dos
+seus episódios.
+
+Em termos práticos, isto significa que quando o utilizador chega à tela de
+informação detalhada sobre um título, deve também aparecer uma lista "rolável"
+de títulos filho, caso existam. O utilizador poderá ainda clicar/selecionar um
+destes títulos filho, aparecendo então uma tela semelhante, mas com informação
+sobre o título filho selecionado.
+
+Caso um qualquer título seja filho (isto é, caso tenha um título pai), o
+utilizador deve ter a possibilidade de ver a tela de informação sobre o título
+pai a partir da tela de informação do título filho.
 
 A implementação desta fase permite uma nota até 2.6 valores (em 3 possíveis).
 
