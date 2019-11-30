@@ -33,7 +33,16 @@ qualquer filme, série, episódio de uma série, vídeo, programa de televisão,
 por ai fora. Uma **pessoa** é alguém que está de alguma forma relacionada com
 um título (por exemplo, um ator).
 
-O
+O seguinte fluxograma apresenta uma ideia geral do funcionamento da aplicação,
+com os requisitos mínimos para as diferentes fases:
+
+![Fluxograma](fluxograma.png)
+
+A aplicação final não tem de seguir exatamente estes passos, desde que siga a
+ideia geral. Por exemplo, podem optar por permitir terminar a aplicação em
+qualquer altura, e/ou, caso não cheguem à Fase 4, podem simplesmente ignorar o
+menu "Tipo de Pesquisa", uma vez que só vão pesquisar por títulos.
+
 ### Fase 1: pesquisa de títulos básica
 
 _Em construção_
