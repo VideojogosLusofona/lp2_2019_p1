@@ -44,14 +44,15 @@ com os requisitos mínimos para as diferentes fases:
 
 A aplicação final não tem de seguir exatamente estes passos, desde que siga a
 ideia geral. Por exemplo, podem optar por permitir terminar a aplicação em
-qualquer altura, e/ou, caso não cheguem à [Fase 4], podem simplesmente ignorar
+qualquer altura, e/ou caso não cheguem à [Fase 4], podem simplesmente ignorar
 o menu "Tipo de Pesquisa", uma vez que só vão pesquisar por títulos.
 
 A aplicação deve mostrar ao utilizador um menu de pesquisa de títulos, e caso
 implementem a [Fase 4], um menu de pesquisa de pessoas. Em qualquer dos casos,
 deve ser possível usar como critérios de pesquisa os campos indicados em cada
 uma das [fases de desenvolvimento]. Deve também ser possível usar qualquer um
-destes campos como critério de ordenação.
+destes campos como critério de ordenação, exceto se existir indicação em
+contrário.
 
 Os resultados devem aparecer na forma de uma lista, mostrando para cada item
 dois ou três campos que consideram importantes. Por exemplo, no caso dos
@@ -150,15 +151,15 @@ ao utilizador escolher apenas entre as profissões existentes na base de dados.
 O utilizador poderá selecionar uma pessoa da lista de resultados, aparecendo
 uma tela de informação com os respetivos detalhes da pessoa. Nesta tela, o
 utilizador tem uma opção adicional, que consiste em pedir uma pesquisa
-automática sobre os títulos em que a pessoa participou. Na apresentação de
-resultados, além do título principal e do ano de lançamento, deve aparecer para
-cada título qual foi a profissão/papel desempenhado pela pessoa em questão.
-Como acontece com qualquer listagem de títulos, o utilizador deve ter a
-possibilidade de selecionar um destes títulos para ver a sua informação
+automática sobre os títulos em que a pessoa participou. Na apresentação destes
+resultados (lista de títulos em que a pessoa participou), deve também aparecer
+para cada título qual foi a profissão/papel desempenhado pela pessoa em
+questão. Como acontece com qualquer listagem de títulos, o utilizador deve ter
+a possibilidade de selecionar um destes títulos para ver a sua informação
 detalhada, e por ai fora.
 
-Atenção que o campo de dados *knownForTitles* não contém todos os títulos em
-que uma pessoa participou, devendo ser ignorado neste projeto.
+Atenção que o campo de dados *knownForTitles* não contém todos os títulos nos
+quais uma pessoa participou, devendo ser ignorado neste projeto.
 
 A implementação desta fase permite a nota máxima de 3 valores.
 
@@ -261,6 +262,10 @@ controlo, nomeadamente:
   lista, e os _arrays_ são sempre pré-alocados.
 * Se forem bem utilizadas, as *structs* podem poupar memória relativamente às
   classes.
+* No Unity, ao apresentarem os resultados de dada pesquisa, tenham cuidado com
+  a quantidade de resultados que injetam no UI. Demasiados resultados podem
+  prejudicar o desempenho e até *crashar* a aplicação. O [LINQ] tem formas de
+  devolver apenas alguns resultados de cada vez, evitando esta situação.
 * Tanto o Unity, como o C# de forma nativa, oferecem formas de analisar a
   quantidade de memória ocupada. Usem essa funcionalidade durante o
   desenvolvimento do projeto para terem noção da memória que estão a utilizar.
