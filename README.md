@@ -27,9 +27,9 @@ benefício ou limitação em termos de nota:
 
 No entanto, é requisito obrigatório deste projeto que a aplicação utilize
 [LINQ] (sintaxe fluente ou expressões de *query*) para realizar as pesquisas.
-Para realizar certas pesquisas é necessário ir mais além do que foi lecionado
-nas aulas sobre [LINQ], e a discussão do projeto incidirá essencialmente na
-forma como construíram as *queries*.
+É necessário ir mais além do que foi lecionado nas aulas sobre [LINQ], e a
+discussão do projeto incidirá essencialmente na forma como construíram as
+*queries*.
 
 ## Funcionamento da aplicação
 
@@ -86,11 +86,13 @@ permitindo uma nota até 1.8 valores (em 3 possíveis).
 
 ### Fase 2: pesquisa de títulos com classificação
 
-_Em construção_
+Além dos requisitos da [Fase 1], deve também ser possível realizar pesquisas de
+títulos, bem como ordenar os resultados das pesquisas, usando a
+**Classificação**, entre 0 a 10, atribuída ao título.
 
 A implementação desta fase permite uma nota até 2.2 valores (em 3 possíveis).
 
-### Fase 3: integração de episódios em séries
+### Fase 3: ligação entre séries e os respetivos episódios
 
 _Em construção_
 
@@ -394,9 +396,9 @@ Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
 [ListSizeCtor]:https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.-ctor#System_Collections_Generic_List_1__ctor_System_Int32_
 [2º projeto de LP1 2018/19]:https://github.com/VideojogosLusofona/lp1_2018_p2_solucao
 [fases de desenvolvimento]:#fases-de-desenvolvimento
-[Fase 1]:#fase-1
-[Fase 2]:#fase-2
-[Fase 3]:#fase-3
-[Fase 4]:#fase-4
+[Fase 1]:#fase-1-pesquisa-de-títulos-básica
+[Fase 2]:#fase-2-pesquisa-de-títulos-com-classificação
+[Fase 3]:#fase-3-ligação-entre-séries-e-os-respetivos-episódios
+[Fase 4]:#fase-4-pesquisa-de-pessoas
 [orgclasses]:#organização-do-projeto-e-estrutura-de-classes
 [objetivos]:#objetivos-e-critério-de-avaliação
