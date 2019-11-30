@@ -19,16 +19,22 @@ de dados do [IMDB], disponível sob a forma de um
 [conjunto de ficheiros][IMDBDataGz], cuja documentação se encontra
 [aqui][IMDBData].
 
-A aplicação pode ser desenvolvida de duas formas distintas, sem qualquer
+A aplicação pode ser desenvolvida numa das seguintes plataformas, sem qualquer
 benefício ou limitação em termos de nota:
 
 1. Console App .NET Core
 2. Unity 2019.2.\*
 
+No entanto, é requisito obrigatório deste projeto que a aplicação utilize
+[LINQ] (sintaxe fluente ou expressões de *query*) para realizar as pesquisas.
+Para realizar certas pesquisas é necessário ir mais além do que foi lecionado
+nas aulas sobre [LINQ], e a discussão do projeto incidirá essencialmente na
+forma como construíram as *queries*.
+
 ## Funcionamento da aplicação
 
 A aplicação deve permitir fazer pesquisas a **títulos**, e possivelmente
-**pessoas**, caso implementem a fase 4 do projeto. Considera-se um **título**
+**pessoas**, caso implementem a [Fase 4] do projeto. Considera-se um **título**
 qualquer filme, série, episódio de uma série, vídeo, programa de televisão, e
 por ai fora. Uma **pessoa** é alguém que está de alguma forma relacionada com
 um título (por exemplo, um ator).
@@ -40,14 +46,40 @@ com os requisitos mínimos para as diferentes fases:
 
 A aplicação final não tem de seguir exatamente estes passos, desde que siga a
 ideia geral. Por exemplo, podem optar por permitir terminar a aplicação em
-qualquer altura, e/ou, caso não cheguem à Fase 4, podem simplesmente ignorar o
+qualquer altura, e/ou, caso não cheguem à [Fase 4], podem simplesmente ignorar o
 menu "Tipo de Pesquisa", uma vez que só vão pesquisar por títulos.
+
+A aplicação deve mostrar ao utilizador um menu de pesquisa de títulos, e caso
+implementem a [Fase 4], um menu de pesquisa de pessoas. Em qualquer dos casos,
+deve ser possível ao utilizador usar como critérios de pesquisa um ou mais dos
+campos indicados em cada uma das [fases de desenvolvimento]. Deve também ser
+possível usar qualquer um destes campos como critério de ordenação.
+
+Se o projeto for desenvolvido em consola, podem ser apresentados 20 ou 30 itens
+de cada vez, sendo necessário que o utilizador pressione uma tecla para ver os
+próximos 20/30 itens. Por outro lado, se se tratar de um projeto Unity, a lista
+de jogos deve ser *scrollable* ("rolável") para cima e para baixo. Também é
+possível ter uma lista "rolável" em modo consola, como implementado na solução
+do [2º projeto de LP1 2018/19].
+
+## Fases de desenvolvimento
 
 ### Fase 1: pesquisa de títulos básica
 
-_Em construção_
+Nesta fase deve ser possível realizar pesquisas de títulos, bem como ordenar os
+resultados das pesquisas, usando os seguintes campos:
 
-<!-- Critério de ordenação -->
+* **Tipo**: filme, curta, série, episódio, etc.
+* **Título primário**: o título do título.
+* **Para adultos?**: sim ou não.
+* **Ano de início**: ano de lançamento do título, ou no caso de uma série, o
+  ano em que a mesma começou.
+* **Ano de fim**: no caso de uma série, o ano em que a mesma terminou.
+* **Géneros**: até três géneros associados ao título (e.g. comédia, ação, etc).
+
+No caso do **tipo** e dos **géneros**, serão valorizadas soluções que permitam
+ao utilizador escolher apenas entre os tipos e/ou géneros existentes na base de
+dados.
 
 A implementação desta fase é o requisito mínimo para o projeto ser avaliado,
 permitindo uma nota até 1.8 valores (em 3 possíveis).
@@ -69,18 +101,6 @@ A implementação desta fase permite uma nota até 2.6 valores (em 3 possíveis)
 _Em construção_
 
 A implementação desta fase permite a nota máxima de 3 valores.
-
-### Apresentação de resultados
-
-Se o projeto for desenvolvido em consola, podem ser apresentados 20 ou 30 itens
-de cada vez, sendo necessário que o utilizador pressione uma tecla para ver os
-próximos 20/30 itens. Por outro lado, se se tratar de um projeto Unity, a lista
-de jogos deve ser *scrollable* ("rolável") para cima e para baixo. Também é
-possível ter uma lista "rolável" em modo consola, como implementado na solução
-do [2º projeto de LP1 2018/19].
-
-Em qualquer dos casos devem ser apresentados, para cada item, todos os campos
-que podem ser usados como critério de ordenação.
 
 ## Ficheiros com dados
 
@@ -173,6 +193,8 @@ controlo, nomeadamente:
   ficheiros. Não abram/leiam ficheiros cuja informação não vão usar.
 * Muitos dos campos existentes em cada linha também não são necessários,
   devendo ser ignorados de modo a poupar memória.
+* Usem tipos apropriados e o mais "pequenos" possível para cada um dos campos.
+  Por exemplo, para representar o ano de lançamento é mesmo preciso um `int`?
 * Considerem pré-alocar as coleções que vão usar com o tamanho exato necessário
   para guardarem os respetivos dados. Por exemplo, as listas têm um
   [construtor][ListSizeCtor] que aceita como parâmetro o tamanho inicial da
@@ -192,8 +214,6 @@ controlo, nomeadamente:
     + (Process.GetCurrentProcess().VirtualMemorySize64 / 1024 / 1024)
     + " megabytes of memory");
   ```
-
-<a name="orgclasses"></a>
 
 ## Organização do projeto e estrutura de classes
 
@@ -215,8 +235,6 @@ desenvolvimento de qualquer aplicação.
 É de realçar que o uso de LINQ, Lambdas e *nullables* é essencial neste
 projeto.
 
-<a name="objetivos"></a>
-
 ## Objetivos e critério de avaliação
 
 Este projeto tem os seguintes objetivos:
@@ -224,8 +242,7 @@ Este projeto tem os seguintes objetivos:
 * **O1** - Programa deve funcionar como especificado.
 * **O2** - Projeto e código bem organizados, nomeadamente:
   * Estrutura de classes bem pensada (ver secção
-    <a href="#orgclasses">Organização do projeto e estrutura de
-    classes</a>).
+    [Organização do projeto e estrutura de classes][orgclasses].
   * Código devidamente comentado e indentado.
   * Inexistência de código "morto", que não faz nada, como por exemplo
     variáveis, propriedades ou métodos nunca usados.
@@ -256,8 +273,8 @@ Este projeto tem os seguintes objetivos:
   * Arquitetura da solução:
     * Descrição da solução, com breve explicação de como o programa foi
       organizado, indicação das coleções usadas e porquê, bem como dos
-      algoritmos utilizados (e.g., para fazer *parsing* dos ficheiros TSV,
-      para conjugar as várias perguntas à base de dados, etc) e as otimizações
+      algoritmos utilizados (e.g., para fazer *parsing* dos ficheiros TSV),
+      as principais *queries* que construíram, bem como as otimizações
       específicas que implementaram.
     * Um diagrama UML de classes simples (i.e., sem indicação dos
       membros da classe) descrevendo a estrutura de classes.
@@ -351,6 +368,7 @@ Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
 * Curso:  [Licenciatura em Videojogos][lamv]
 * Instituição: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
 
+[LINQ]:https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
 [lamv]:https://www.ulusofona.pt/licenciatura/videojogos
 [Nuno Fachada]:https://github.com/fakenmc
@@ -375,3 +393,10 @@ Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
 [StreamReader]:https://docs.microsoft.com/dotnet/api/system.io.streamreader
 [ListSizeCtor]:https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.-ctor#System_Collections_Generic_List_1__ctor_System_Int32_
 [2º projeto de LP1 2018/19]:https://github.com/VideojogosLusofona/lp1_2018_p2_solucao
+[fases de desenvolvimento]:#fases-de-desenvolvimento
+[Fase 1]:#fase-1
+[Fase 2]:#fase-2
+[Fase 3]:#fase-3
+[Fase 4]:#fase-4
+[orgclasses]:#organização-do-projeto-e-estrutura-de-classes
+[objetivos]:#objetivos-e-critério-de-avaliação
