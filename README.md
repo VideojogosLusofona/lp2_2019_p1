@@ -107,15 +107,15 @@ Além dos requisitos das fases anteriores, os títulos pai devem ser
 explicitamente relacionados com os títulos filho. É o caso das séries e dos
 seus episódios.
 
-Em termos práticos, isto significa que quando o utilizador chega à tela de
-informação detalhada sobre um título, deve também aparecer uma lista "rolável"
-de títulos filho, caso existam. O utilizador poderá ainda clicar/selecionar um
-destes títulos filho, aparecendo então uma tela semelhante, mas com informação
-sobre o título filho selecionado.
+Em termos práticos, isto significa que, quando o utilizador chega à tela de
+informação detalhada sobre qualquer título, tem duas opções adicionais:
 
-Caso um qualquer título seja filho (isto é, caso tenha um título pai), o
-utilizador deve ter a possibilidade de ver a tela de informação sobre o título
-pai a partir da tela de informação do título filho.
+1. Fazer uma pesquisa automática pelos respetivos títulos filho, caso existam.
+   Na lista "rolável" que aparece com os resultados desta procura, o utilizador
+   poderá naturalmente clicar/selecionar um destes títulos filho, aparecendo
+   então uma tela de informação sobre o título filho selecionado.
+2. Ver a tela de informação do título pai, caso exista (isto é, caso o título
+   atual seja filho).
 
 A implementação desta fase permite uma nota até 2.6 valores (em 3 possíveis).
 
