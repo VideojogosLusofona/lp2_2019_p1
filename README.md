@@ -236,7 +236,7 @@ string fileTitleRatingsFull = Path.Combine(folderWithFiles, fileTitleRatings);
 ```
 
 A aplicação deve abrir diretamente os ficheiros comprimidos, usando o
-[decorador de *streams* apropriado da API do C#](GZipStream), de modo a que
+[decorador de *streams* apropriado da API do C#][GZipStream], de modo a que
 o adaptador [StreamReader] possa ler texto descomprimido (em formato [TSV]).
 
 Se algum ficheiro necessário não existir ou tiver um formato inválido, a
