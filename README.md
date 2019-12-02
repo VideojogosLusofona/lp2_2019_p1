@@ -307,7 +307,7 @@ implementar algumas partes específicas do projeto. Este exemplo é meramente
 ilustrativo, podendo oferecer alguma ajuda para a [Fase 1], embora não estando
 necessariamente a usar as melhores abordagens e princípios. Além disso, não
 incluí código importante a nível do LINQ para fases posteriores, nomeadamente o
-método [Join()], também disponível para [expressões de *query*](join).
+método [Join()] (também disponível na forma de [expressão de *query*][join]).
 
 ## Objetivos e critério de avaliação
 

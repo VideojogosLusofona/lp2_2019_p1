@@ -87,7 +87,7 @@ namespace SampleLP2p1
 
             // Pesquisar por títulos cujo título contenha "video" e "game",
             // ordenando os resultados por ano e depois por título e
-            // convertendo os resultados numa lista para depois os podermos
+            // convertendo os resultados num array para depois os podermos
             // percorrer de forma eficiente
             queryResults =
                  (from title in titles
@@ -187,7 +187,7 @@ namespace SampleLP2p1
             ICollection<string> cleanTitleGenres = new List<string>();
             short? startYear;
 
-            // Parse start year if possible
+            // Tentar determinar ano de lançamento, se possível
             try
             {
                 startYear = short.TryParse(fields[5], out aux)
@@ -201,20 +201,21 @@ namespace SampleLP2p1
                     + $" with this stack trace: {e.StackTrace}");
             }
 
-            // Clean genres
+            // Remover géneros inválidos
             foreach (string genre in titleGenres)
                 if (genre != null && genre.Length > 0 && genre != @"\N")
                     cleanTitleGenres.Add(genre);
 
-            // Add genres to set of all genres
+            // Adicionar géneros válidos ao conjunto de todos os géneros da
+            // base de dados
             foreach (string genre in cleanTitleGenres)
                 allGenres.Add(genre);
 
-            // Create new title with information retrieved from line
+            // Criar novo Título usando a informação obtida da linha
             Title t = new Title(
                 fields[2], startYear, cleanTitleGenres.ToArray());
 
-            // Add title to list of titles
+            // Adicionar Título à coleção de títulos
             titles.Add(t);
         }
     }
