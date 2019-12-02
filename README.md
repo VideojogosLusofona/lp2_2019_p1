@@ -300,6 +300,15 @@ desenvolvimento de qualquer aplicação.
 É de realçar que o uso de LINQ, Lambdas e *nullables* é essencial neste
 projeto.
 
+## Exemplo
+
+A pasta [`sample`](sample) contém um pequeno exemplo com sugestões de como
+implementar algumas partes específicas do projeto. Este exemplo é meramente
+ilustrativo, podendo oferecer alguma ajuda para a [Fase 1], embora não estando
+necessariamente a usar as melhores abordagens e princípios. Além disso, não
+incluí código importante a nível do LINQ para fases posteriores, nomeadamente o
+método [Join()], também disponível para [expressões de *query*](join).
+
 ## Objetivos e critério de avaliação
 
 Este projeto tem os seguintes objetivos:
@@ -457,6 +466,8 @@ Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
 [GZipStream]:https://docs.microsoft.com/dotnet/api/system.io.compression.gzipstream
 [StreamReader]:https://docs.microsoft.com/dotnet/api/system.io.streamreader
 [ListSizeCtor]:https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.-ctor#System_Collections_Generic_List_1__ctor_System_Int32_
+[Join()]:https://docs.microsoft.com/dotnet/api/system.linq.enumerable.join
+[join]:https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/join-clause
 [2º projeto de LP1 2018/19]:https://github.com/VideojogosLusofona/lp1_2018_p2_solucao
 [fases de desenvolvimento]:#fases-de-desenvolvimento
 [Fase 1]:#fase-1-pesquisa-de-títulos-básica
