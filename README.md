@@ -434,7 +434,9 @@ Estruturas de Dados][aed] do [Instituto Superior Técnico][ist]*
 
 ## Licenças
 
-Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
+* Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
+* O código exemplo é disponibilizado através da licença
+  [Mozilla Public License 2.0][MPL2].
 
 ## Metadados
 
@@ -444,6 +446,7 @@ Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
 
 [LINQ]:https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
+[MPL2]:https://www.mozilla.org/en-US/MPL/2.0/
 [lamv]:https://www.ulusofona.pt/licenciatura/videojogos
 [Nuno Fachada]:https://github.com/fakenmc
 [ULHT]:https://www.ulusofona.pt/
