@@ -378,7 +378,7 @@ avaliados.
 ## Entrega
 
 O projeto deve ser entregue por **grupos de 2 a 3 alunos** via Moodle até às
-23h de 8 de dezembro de 2019. Deve ser submetido um ficheiro `zip` com a
+23h de 15 de dezembro de 2019. Deve ser submetido um ficheiro `zip` com a
 solução completa do projeto, nomeadamente:
 
 * Pasta escondida `.git` com o repositório Git local do projeto.
